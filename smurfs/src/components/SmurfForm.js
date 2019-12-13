@@ -16,29 +16,29 @@ class SmurfForm extends Component {
 
     render(){
         return(
-            <div>
+            <div className="Form">
                 <form onSubmit={this.submitHandler.bind(this)}>
-               <input
+               <input className="Wrapper"
                name='name'
                value={this.context.state.smurfForm.name}
                placeholder='name'
                onChange={this.changeHandler.bind(this)}
                />
-               <input
+               <input className="Wrapper"
                 name='age'
                 value={this.context.state.smurfForm.age}
                 placeholder='age'
                 onChange={this.changeHandler.bind(this)}
 
                />
-               <input
+               <input className="Wrapper"
                 name='height'
                 value={this.context.state.smurfForm.height}
                 placeholder='height'
                 onChange={this.changeHandler.bind(this)}
 
                />
-               <button  onClick={this.submitHandler.bind(this)}>Add</button>
+               <button className="Wrapper"   onClick={this.submitHandler.bind(this)}>Add</button>
                </form>
             </div>
         );
