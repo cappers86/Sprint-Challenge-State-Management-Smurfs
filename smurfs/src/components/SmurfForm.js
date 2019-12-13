@@ -6,13 +6,18 @@ class SmurfForm extends Component {
 
     changeHandler(e){
         this.context.formChange(e.target.name, e.target.value)
-        console.log(this.context.state.smurfForm)
+        //console.log(this.context.state.smurfForm)
+    }
+
+    submitHandler(e){
+        e.preventDefault();
+        this.context.addSmurf();
     }
 
     render(){
         return(
             <div>
-                <form>
+                <form onSubmit={this.submitHandler.bind(this)}>
                <input
                name='name'
                value={this.context.state.smurfForm.name}
@@ -33,7 +38,7 @@ class SmurfForm extends Component {
                 onChange={this.changeHandler.bind(this)}
 
                />
-               <button>Add</button>
+               <button  onClick={this.submitHandler.bind(this)}>Add</button>
                </form>
             </div>
         );
