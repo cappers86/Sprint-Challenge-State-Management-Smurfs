@@ -33,7 +33,22 @@ class Provider extends React.Component {
                 .catch (err => {
                   console.log(err);
                 })
+      },
+      
+      formChange:(target, value) => {
+        this.setState({
+          ...this.state,
+          smurfForm: {
+            ...this.state.smurfForm,
+            [target]: value,
+          }
+        })
+      },
+      
+      addMemeber: () => {
+        axios.post('http://localhost:3333/smurfs', this.state.smurfForm)
       }
+
       }}>
         {this.props.children}
       </smurfContext.Provider>
