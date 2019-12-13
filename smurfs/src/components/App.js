@@ -27,7 +27,8 @@ class Provider extends React.Component {
         getSmurfs: () => {
           axios.get('http://localhost:3333/smurfs')
                 .then(res => {
-                  console.log(res.data)
+                  this.setState({smurfList: res.data})
+                  console.log(this.state)
                 })
                 .catch (err => {
                   console.log(err);
