@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import smurfContext from '../contexts/smurfContext';
 import SmurfList from './SmurfList';
 import SmurfForm from './SmurfForm';
+import axios from 'axios';
 import "./App.css";
 
 const initialState = {
@@ -19,7 +20,20 @@ class Provider extends React.Component {
   
   render() {
     return(
-      <smurfContext.Provider value={{state: this.state}}>
+      <smurfContext.Provider value={{
+     
+        state: this.state,
+      
+        getSmurfs: () => {
+          axios.get('http://localhost:3333/smurfs')
+                .then(res => {
+                  console.log(res.data)
+                })
+                .catch (err => {
+                  console.log(err);
+                })
+      }
+      }}>
         {this.props.children}
       </smurfContext.Provider>
     );
