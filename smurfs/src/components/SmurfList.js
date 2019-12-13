@@ -17,7 +17,7 @@ class SmurfList extends Component {
         return(
             <div>
                 {this.context.state.smurfList.map(smurf => {
-                   return <Smurf smurf={smurf}/>
+                   return  <Smurf smurf={smurf}/>
                 })}
             </div>
         );
