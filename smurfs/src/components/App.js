@@ -48,7 +48,7 @@ class Provider extends React.Component {
       addSmurf: () => {
         axios.post('http://localhost:3333/smurfs', this.state.smurfForm)
         .then( res=>{
-          this.setState({smurfList: res.data})
+          this.setState({...initialState, smurfList: res.data, })
         })
         .catch(err => {
           console.log(err);
