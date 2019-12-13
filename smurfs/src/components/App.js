@@ -29,10 +29,12 @@ class Provider extends React.Component {
 class App extends Component {
   render() {
     return (
+      <Provider>
       <div className="App">
         <SmurfList />
         <SmurfForm />
       </div>
+      </Provider>
     );
   }
 }
